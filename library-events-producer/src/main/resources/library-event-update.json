@@ -1,0 +1,9 @@
+{
+  "libraryEventId": 1,
+  "libraryEventType": "UPDATE",
+  "book": {
+    "bookId": 1,
+    "bookName": "Advanced Java: Java 17",
+    "bookAuthor": "Author2"
+  }
+}
