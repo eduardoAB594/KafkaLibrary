@@ -5,12 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="00d6238b-f67a-4193-97bd-56061c3d3aed" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/library-events-consumer/src/main/java/com/course/libraryeventsconsumer/entity/FailureRecordEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/library-events-consumer/src/main/java/com/course/libraryeventsconsumer/repository/FailureRecordRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/library-events-consumer/src/main/java/com/course/libraryeventsconsumer/service/FailureService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/library-events-consumer/src/main/java/com/course/libraryeventsconsumer/scheduler/RetryScheduler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-events-consumer/src/main/java/com/course/libraryeventsconsumer/config/ConsumerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/library-events-consumer/src/main/java/com/course/libraryeventsconsumer/config/ConsumerConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-events-consumer/src/test/java/com/course/libraryeventsconsumer/consumer/LibraryEventsConsumerIntegrationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/library-events-consumer/src/test/java/com/course/libraryeventsconsumer/consumer/LibraryEventsConsumerIntegrationTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library-events-consumer/src/main/java/com/course/libraryeventsconsumer/LibraryEventsConsumerApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/library-events-consumer/src/main/java/com/course/libraryeventsconsumer/LibraryEventsConsumerApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library-events-consumer/src/main/java/com/course/libraryeventsconsumer/repository/FailureRecordRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/library-events-consumer/src/main/java/com/course/libraryeventsconsumer/repository/FailureRecordRepository.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,7 +101,33 @@
       <recent name="com.course.libraryeventsconsumer.consumer" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.LibraryEventsConsumerIntegrationTest.shouldSaveMessageToFailedRecords">
+  <component name="RunManager" selected="Application.LibraryEventsConsumerApplication">
+    <configuration name="LibraryEventsConsumerApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.course.libraryeventsconsumer.LibraryEventsConsumerApplication" />
+      <module name="library-events-consumer.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.course.libraryeventsconsumer.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LibraryEventsProducerApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.course.libraryeventsproducer.LibraryEventsProducerApplication" />
+      <module name="library-events-producer.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.course.libraryeventsproducer.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="LibraryEventsConsumerIntegrationTest.shouldSaveMessageToFailedRecords" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -176,61 +200,22 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="LibraryEventsConsumerIntegrationTest.shouldSendToRetryTopicOnRetryException" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/library-events-consumer" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;com.course.libraryeventsconsumer.consumer.LibraryEventsConsumerIntegrationTest.shouldSendToRetryTopicOnRetryException&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
-      <method v="2" />
-    </configuration>
-    <configuration name="LibraryEventsConsumerIntegrationTest.shouldThrowExceptionWhenUpdatingWithNullLibraryEventId" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/library-events-consumer" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;com.course.libraryeventsconsumer.consumer.LibraryEventsConsumerIntegrationTest.shouldThrowExceptionWhenUpdatingWithNullLibraryEventId&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
+    <configuration default="true" type="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" value="javadebug" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5005" />
+      <option name="AUTO_RESTART" value="false" />
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.LibraryEventsProducerApplication" />
+        <item itemvalue="Application.LibraryEventsConsumerApplication" />
         <item itemvalue="Gradle.LibraryEventsConsumerIntegrationTest.shouldSaveMessageToFailedRecords" />
         <item itemvalue="Gradle.LibraryEventsConsumerIntegrationTest.shouldSendToDeadLetterTopicOnException" />
         <item itemvalue="Gradle.LibraryEventsConsumerIntegrationTest.shouldSendToRetryTopicOnException" />
-        <item itemvalue="Gradle.LibraryEventsConsumerIntegrationTest.shouldSendToRetryTopicOnRetryException" />
-        <item itemvalue="Gradle.LibraryEventsConsumerIntegrationTest.shouldThrowExceptionWhenUpdatingWithNullLibraryEventId" />
       </list>
     </recent_temporary>
   </component>
