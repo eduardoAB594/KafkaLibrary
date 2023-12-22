@@ -65,11 +65,11 @@ public class ConsumerConfig {
         );
 
         // Add to retry only on specific exceptions
-        var exceptionsToIgnore = List.of(
+        var NonRetryableExceptions = List.of(
             IllegalArgumentException.class
         );
 
-        exceptionsToIgnore.forEach(
+        NonRetryableExceptions.forEach(
                 errorHandler::addNotRetryableExceptions
         );
 

@@ -185,8 +185,8 @@ class LibraryEventsConsumerIntegrationTest {
     }
 
     @Test
-    void shouldSendToRetryTopicOnRetryException() throws ExecutionException, InterruptedException, JsonProcessingException {
-        String json = " {\"libraryEventId\":0,\"libraryEventType\":\"NEW\",\"book\":{\"bookId\":456,\"bookName\":\"Kafka course\",\"bookAuthor\":\"Eduardo\"}}";
+    void shouldSendToRetryTopicOnException() throws ExecutionException, InterruptedException, JsonProcessingException {
+        String json = "{\"libraryEventId\":0,\"libraryEventType\":\"UPDATE\",\"book\":{\"bookId\":456,\"bookName\":\"Kafka course\",\"bookAuthor\":\"Eduardo\"}}";
         kafkaTemplate.sendDefault(json).get();
 
         CountDownLatch latch = new CountDownLatch(1);
@@ -200,6 +200,26 @@ class LibraryEventsConsumerIntegrationTest {
         embeddedKafkaBroker.consumeFromAnEmbeddedTopic(consumer, retryTopic);
 
         ConsumerRecord<Integer, String> consumerRecord = KafkaTestUtils.getSingleRecord(consumer, retryTopic);
+
+        assertThat(json).isEqualTo(consumerRecord.value());
+    }
+
+    @Test
+    void shouldSendToDeadLetterTopicOnException() throws ExecutionException, InterruptedException, JsonProcessingException {
+        String json = "{\"libraryEventId\":10,\"libraryEventType\":\"UPDATE\",\"book\":{\"bookId\":456,\"bookName\":\"Kafka course\",\"bookAuthor\":\"Eduardo\"}}";
+        kafkaTemplate.sendDefault(json).get();
+
+        CountDownLatch latch = new CountDownLatch(1);
+        latch.await(5, TimeUnit.SECONDS);
+
+        verify(libraryEventsConsumerSpy, times(1)).onMessage(any(ConsumerRecord.class));
+        verify(libraryEventsServiceSpy, times(1)).processLibraryEvent(any(ConsumerRecord.class));
+
+        Map<String, Object> configs = new HashMap<>(KafkaTestUtils.consumerProps("group2", "true", embeddedKafkaBroker));
+        consumer = new DefaultKafkaConsumerFactory<>(configs, new IntegerDeserializer(), new StringDeserializer()).createConsumer();
+        embeddedKafkaBroker.consumeFromAnEmbeddedTopic(consumer, deadLetterTopic);
+
+        ConsumerRecord<Integer, String> consumerRecord = KafkaTestUtils.getSingleRecord(consumer, deadLetterTopic);
 
         assertThat(json).isEqualTo(consumerRecord.value());
     }

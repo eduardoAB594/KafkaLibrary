@@ -5,12 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="00d6238b-f67a-4193-97bd-56061c3d3aed" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/library-events-consumer/src/main/java/com/course/libraryeventsconsumer/consumer/LibraryEventsRetryConsumer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/library-events-consumer/src/main/java/com/course/libraryeventsconsumer/config/ConsumerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/library-events-consumer/src/main/java/com/course/libraryeventsconsumer/config/ConsumerConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-events-consumer/src/main/java/com/course/libraryeventsconsumer/consumer/LibraryEventsConsumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/library-events-consumer/src/main/java/com/course/libraryeventsconsumer/consumer/LibraryEventsConsumer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-events-consumer/src/main/java/com/course/libraryeventsconsumer/service/LibraryEventService.java" beforeDir="false" afterPath="$PROJECT_DIR$/library-events-consumer/src/main/java/com/course/libraryeventsconsumer/service/LibraryEventService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-events-consumer/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/library-events-consumer/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/library-events-consumer/src/test/java/com/course/libraryeventsconsumer/consumer/LibraryEventsConsumerIntegrationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/library-events-consumer/src/test/java/com/course/libraryeventsconsumer/consumer/LibraryEventsConsumerIntegrationTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -33,6 +29,9 @@
     <system id="GRADLE">
       <state>
         <task path="$PROJECT_DIR$/library-events-producer">
+          <activation />
+        </task>
+        <task path="$PROJECT_DIR$/library-events-consumer">
           <activation />
         </task>
         <projects_view />
@@ -99,21 +98,8 @@
       <recent name="com.course.libraryeventsconsumer.consumer" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.LibraryEventsConsumerIntegrationTest.shouldSendToRetryTopicOnRetryException">
-    <configuration name="LibraryEventsProducerApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.course.libraryeventsproducer.LibraryEventsProducerApplication" />
-      <module name="library-events-producer.main" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.course.libraryeventsproducer.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="LibraryEventsConsumerIntegrationTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+  <component name="RunManager" selected="Gradle.LibraryEventsConsumerIntegrationTest.shouldSendToDeadLetterTopicOnException">
+    <configuration name="LibraryEventsConsumerIntegrationTest.shouldSendToDeadLetterTopicOnException" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/library-events-consumer" />
@@ -126,7 +112,31 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;com.course.libraryeventsconsumer.consumer.LibraryEventsConsumerIntegrationTest&quot;" />
+            <option value="&quot;com.course.libraryeventsconsumer.consumer.LibraryEventsConsumerIntegrationTest.shouldSendToDeadLetterTopicOnException&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="LibraryEventsConsumerIntegrationTest.shouldSendToRetryTopicOnException" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/library-events-consumer" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;com.course.libraryeventsconsumer.consumer.LibraryEventsConsumerIntegrationTest.shouldSendToRetryTopicOnException&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -211,11 +221,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.LibraryEventsConsumerIntegrationTest.shouldSendToDeadLetterTopicOnException" />
+        <item itemvalue="Gradle.LibraryEventsConsumerIntegrationTest.shouldSendToRetryTopicOnException" />
         <item itemvalue="Gradle.LibraryEventsConsumerIntegrationTest.shouldSendToRetryTopicOnRetryException" />
         <item itemvalue="Gradle.LibraryEventsConsumerIntegrationTest.shouldThrowExceptionWhenUpdatingWithNullLibraryEventId" />
         <item itemvalue="Gradle.LibraryEventsConsumerIntegrationTest.shouldUpdateExistingLibraryEvent" />
-        <item itemvalue="Application.LibraryEventsProducerApplication" />
-        <item itemvalue="Gradle.LibraryEventsConsumerIntegrationTest" />
       </list>
     </recent_temporary>
   </component>
