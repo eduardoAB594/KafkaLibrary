@@ -5,17 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="00d6238b-f67a-4193-97bd-56061c3d3aed" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/library-events-consumer/src/main/java/com/course/libraryeventsconsumer/entity/BookEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/library-events-consumer/src/main/java/com/course/libraryeventsconsumer/entity/LibraryEventEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/library-events-consumer/src/main/java/com/course/libraryeventsconsumer/entity/LibraryEventType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/library-events-consumer/src/main/java/com/course/libraryeventsconsumer/model/Book.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/library-events-consumer/src/main/java/com/course/libraryeventsconsumer/model/LibraryEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/library-events-consumer/src/main/java/com/course/libraryeventsconsumer/repository/LibraryEventRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/library-events-consumer/src/main/java/com/course/libraryeventsconsumer/service/LibraryEventService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/library-events-consumer/src/test/java/com/course/libraryeventsconsumer/consumer/LibraryEventsConsumerIntegrationTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-events-consumer/src/main/java/com/course/libraryeventsconsumer/consumer/LibraryEventsConsumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/library-events-consumer/src/main/java/com/course/libraryeventsconsumer/consumer/LibraryEventsConsumer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/library-events-consumer/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/library-events-consumer/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-events-consumer/src/test/java/com/course/libraryeventsconsumer/LibraryEventsConsumerApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/library-events-consumer/src/test/java/com/course/libraryeventsconsumer/LibraryEventsConsumerApplicationTestsEntity.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,9 +38,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JUnit5 Test Class" />
         <option value="Interface" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -95,6 +87,7 @@
       <recent name="" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.course.libraryeventsconsumer.consumer" />
       <recent name="com.course.libraryeventsproducer.controller" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -102,7 +95,7 @@
       <recent name="com.course.libraryeventsconsumer.consumer" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.LibraryEventsConsumerApplication">
+  <component name="RunManager" selected="Gradle.LibraryEventsConsumerIntegrationTest.shouldThrowExceptionWhenUpdatingWithNullLibraryEventId">
     <configuration name="LibraryEventsConsumerApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.course.libraryeventsconsumer.LibraryEventsConsumerApplication" />
       <module name="library-events-consumer.main" />
@@ -129,10 +122,10 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LibraryEventsControllerIntegrationTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="LibraryEventsConsumerIntegrationTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/library-events-producer" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/library-events-consumer" />
         <option name="externalSystemIdString" value="GRADLE" />
         <option name="scriptParameters" value="" />
         <option name="taskDescriptions">
@@ -142,7 +135,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;libraryeventsproducer.controller.LibraryEventsControllerIntegrationTest&quot;" />
+            <option value="&quot;com.course.libraryeventsconsumer.consumer.LibraryEventsConsumerIntegrationTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -153,10 +146,10 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="LibraryEventsControllerTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="LibraryEventsConsumerIntegrationTest.shouldThrowExceptionWhenUpdatingWithNullLibraryEventId" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/library-events-producer" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/library-events-consumer" />
         <option name="externalSystemIdString" value="GRADLE" />
         <option name="scriptParameters" value="" />
         <option name="taskDescriptions">
@@ -166,7 +159,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;com.course.libraryeventsproducer.controller.LibraryEventsControllerTest&quot;" />
+            <option value="&quot;com.course.libraryeventsconsumer.consumer.LibraryEventsConsumerIntegrationTest.shouldThrowExceptionWhenUpdatingWithNullLibraryEventId&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -177,10 +170,10 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="LibraryEventsControllerTest.shouldFailWithInvalidValues" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="LibraryEventsConsumerIntegrationTest.shouldUpdateExistingLibraryEvent" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/library-events-producer" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/library-events-consumer" />
         <option name="externalSystemIdString" value="GRADLE" />
         <option name="scriptParameters" value="" />
         <option name="taskDescriptions">
@@ -190,7 +183,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;com.course.libraryeventsproducer.controller.LibraryEventsControllerTest.shouldFailWithInvalidValues&quot;" />
+            <option value="&quot;com.course.libraryeventsconsumer.consumer.LibraryEventsConsumerIntegrationTest.shouldUpdateExistingLibraryEvent&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -203,11 +196,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.LibraryEventsConsumerIntegrationTest.shouldThrowExceptionWhenUpdatingWithNullLibraryEventId" />
+        <item itemvalue="Gradle.LibraryEventsConsumerIntegrationTest.shouldUpdateExistingLibraryEvent" />
+        <item itemvalue="Gradle.LibraryEventsConsumerIntegrationTest" />
         <item itemvalue="Application.LibraryEventsConsumerApplication" />
         <item itemvalue="Application.LibraryEventsProducerApplication" />
-        <item itemvalue="Gradle.LibraryEventsControllerTest.shouldFailWithInvalidValues" />
-        <item itemvalue="Gradle.LibraryEventsControllerTest" />
-        <item itemvalue="Gradle.LibraryEventsControllerIntegrationTest" />
       </list>
     </recent_temporary>
   </component>
