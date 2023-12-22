@@ -1,8 +1,10 @@
 package com.course.libraryeventsconsumer.config;
 
-import lombok.RequiredArgsConstructor;
+import com.course.libraryeventsconsumer.service.FailureService;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.apache.kafka.common.TopicPartition;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.kafka.ConcurrentKafkaListenerContainerFactoryConfigurer;
 import org.springframework.context.annotation.Bean;
@@ -11,6 +13,7 @@ import org.springframework.dao.RecoverableDataAccessException;
 import org.springframework.kafka.config.ConcurrentKafkaListenerContainerFactory;
 import org.springframework.kafka.core.ConsumerFactory;
 import org.springframework.kafka.core.KafkaTemplate;
+import org.springframework.kafka.listener.ConsumerRecordRecoverer;
 import org.springframework.kafka.listener.DeadLetterPublishingRecoverer;
 import org.springframework.kafka.listener.DefaultErrorHandler;
 import org.springframework.kafka.support.ExponentialBackOffWithMaxRetries;
@@ -20,11 +23,18 @@ import java.util.List;
 
 //@EnableKafka Used for order versions of Kafka
 @Slf4j
-@RequiredArgsConstructor
 @Configuration
 public class ConsumerConfig {
 
-    private final KafkaTemplate kafkaTemplate;
+    public static final String RETRY = "RETRY";
+    public static final String DEAD_LETTER = "DEAD_LETTER";
+    public static final String SENT = "SENT";
+
+    @Autowired
+    private FailureService failureService;
+
+    @Autowired
+    private KafkaTemplate kafkaTemplate;
 
     @Value("${recovery.topics.retry:library-events.RETRY}")
     private String retryTopic;
@@ -48,6 +58,21 @@ public class ConsumerConfig {
         return recoverer;
     }
 
+    ConsumerRecordRecoverer consumerRecordRecoverer = (record, exception) -> {
+        log.error("Exception in consumerRecordRecoverer : {} ", exception.getMessage(), exception);
+        var consumerRecord = (ConsumerRecord<Integer, String>) record;
+
+        if (exception.getCause() instanceof RecoverableDataAccessException) {
+            // Recovery logic
+            log.warn("Saving message to retry later :: {}", record);
+            failureService.saveFailedRecord(consumerRecord, exception, RETRY);
+        } else {
+            // Non recovery logic
+            log.warn("Dead lettering received message :: {}", record);
+            failureService.saveFailedRecord(consumerRecord, exception, DEAD_LETTER);
+        }
+    };
+
 
     public DefaultErrorHandler errorHandler() {
         // Override default configuration 6 times with no interval
@@ -60,7 +85,8 @@ public class ConsumerConfig {
         exponentialBackoff.setMaxInterval(2000L);
 
         var errorHandler = new DefaultErrorHandler(
-                publishingRecoverer(),
+                //publishingRecoverer(),
+                consumerRecordRecoverer,
                 fixedBackoff
         );
 

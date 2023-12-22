@@ -5,6 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="00d6238b-f67a-4193-97bd-56061c3d3aed" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/library-events-consumer/src/main/java/com/course/libraryeventsconsumer/entity/FailureRecordEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/library-events-consumer/src/main/java/com/course/libraryeventsconsumer/repository/FailureRecordRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/library-events-consumer/src/main/java/com/course/libraryeventsconsumer/service/FailureService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/library-events-consumer/src/main/java/com/course/libraryeventsconsumer/config/ConsumerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/library-events-consumer/src/main/java/com/course/libraryeventsconsumer/config/ConsumerConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/library-events-consumer/src/test/java/com/course/libraryeventsconsumer/consumer/LibraryEventsConsumerIntegrationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/library-events-consumer/src/test/java/com/course/libraryeventsconsumer/consumer/LibraryEventsConsumerIntegrationTest.java" afterDir="false" />
@@ -65,20 +68,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "/Users/macbook/repos/Library/library-events-consumer/src/main/java/com/course/libraryeventsconsumer/model",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "preferences.lookFeel"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/macbook/repos/Library/library-events-consumer/src/main/java/com/course/libraryeventsconsumer/model&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/library-events-consumer/src/main/java/com/course/libraryeventsconsumer/model" />
@@ -94,11 +97,37 @@
       <recent name="com.course.libraryeventsproducer.controller" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.course.libraryeventsconsumer.service" />
+      <recent name="com.course.libraryeventsconsumer.repository" />
       <recent name="com.course.libraryeventsconsumer.entity" />
       <recent name="com.course.libraryeventsconsumer.consumer" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.LibraryEventsConsumerIntegrationTest.shouldSendToDeadLetterTopicOnException">
+  <component name="RunManager" selected="Gradle.LibraryEventsConsumerIntegrationTest.shouldSaveMessageToFailedRecords">
+    <configuration name="LibraryEventsConsumerIntegrationTest.shouldSaveMessageToFailedRecords" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/library-events-consumer" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;com.course.libraryeventsconsumer.consumer.LibraryEventsConsumerIntegrationTest.shouldSaveMessageToFailedRecords&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
     <configuration name="LibraryEventsConsumerIntegrationTest.shouldSendToDeadLetterTopicOnException" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -195,37 +224,13 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="LibraryEventsConsumerIntegrationTest.shouldUpdateExistingLibraryEvent" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/library-events-consumer" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;com.course.libraryeventsconsumer.consumer.LibraryEventsConsumerIntegrationTest.shouldUpdateExistingLibraryEvent&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.LibraryEventsConsumerIntegrationTest.shouldSaveMessageToFailedRecords" />
         <item itemvalue="Gradle.LibraryEventsConsumerIntegrationTest.shouldSendToDeadLetterTopicOnException" />
         <item itemvalue="Gradle.LibraryEventsConsumerIntegrationTest.shouldSendToRetryTopicOnException" />
         <item itemvalue="Gradle.LibraryEventsConsumerIntegrationTest.shouldSendToRetryTopicOnRetryException" />
         <item itemvalue="Gradle.LibraryEventsConsumerIntegrationTest.shouldThrowExceptionWhenUpdatingWithNullLibraryEventId" />
-        <item itemvalue="Gradle.LibraryEventsConsumerIntegrationTest.shouldUpdateExistingLibraryEvent" />
       </list>
     </recent_temporary>
   </component>

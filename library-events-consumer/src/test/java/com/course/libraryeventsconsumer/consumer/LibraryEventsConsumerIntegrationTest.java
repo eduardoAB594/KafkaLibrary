@@ -1,11 +1,13 @@
 package com.course.libraryeventsconsumer.consumer;
 
 import com.course.libraryeventsconsumer.entity.BookEntity;
+import com.course.libraryeventsconsumer.entity.FailureRecordEntity;
 import com.course.libraryeventsconsumer.entity.LibraryEventEntity;
 
 import com.course.libraryeventsconsumer.entity.LibraryEventType;
 import com.course.libraryeventsconsumer.model.Book;
 import com.course.libraryeventsconsumer.model.LibraryEvent;
+import com.course.libraryeventsconsumer.repository.FailureRecordRepository;
 import com.course.libraryeventsconsumer.repository.LibraryEventRepository;
 import com.course.libraryeventsconsumer.service.LibraryEventService;
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -72,6 +74,9 @@ class LibraryEventsConsumerIntegrationTest {
 
     @Autowired
     LibraryEventRepository libraryEventsRepository;
+
+    @Autowired
+    FailureRecordRepository failureRecordRepository;
 
     @Autowired
     ObjectMapper objectMapper;
@@ -222,5 +227,23 @@ class LibraryEventsConsumerIntegrationTest {
         ConsumerRecord<Integer, String> consumerRecord = KafkaTestUtils.getSingleRecord(consumer, deadLetterTopic);
 
         assertThat(json).isEqualTo(consumerRecord.value());
+    }
+
+    @Test
+    void shouldSaveMessageToFailedRecords() throws ExecutionException, InterruptedException, JsonProcessingException {
+        String json = "{\"libraryEventId\":10,\"libraryEventType\":\"UPDATE\",\"book\":{\"bookId\":456,\"bookName\":\"Kafka course\",\"bookAuthor\":\"Eduardo\"}}";
+        kafkaTemplate.sendDefault(json).get();
+
+        CountDownLatch latch = new CountDownLatch(1);
+        latch.await(5, TimeUnit.SECONDS);
+
+        verify(libraryEventsConsumerSpy, times(1)).onMessage(any(ConsumerRecord.class));
+        verify(libraryEventsServiceSpy, times(1)).processLibraryEvent(any(ConsumerRecord.class));
+
+        List<FailureRecordEntity> failureRecordList = failureRecordRepository.findAll();
+
+        assertThat(failureRecordList).hasSize(1)
+                .extracting(FailureRecordEntity::getStatus)
+                .containsExactly("DEAD_LETTER");
     }
 }
