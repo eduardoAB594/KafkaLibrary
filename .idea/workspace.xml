@@ -5,15 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="00d6238b-f67a-4193-97bd-56061c3d3aed" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/library-events-producer/src/main/java/com/course/libraryeventsproducer/controller/LibraryEventsControllerAdvice.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/library-events-producer/src/test/java/com/course/libraryeventsproducer/controller/LibraryEventsControllerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/library-events-producer/src/test/java/com/course/libraryeventsproducer/integration/controller/LibraryEventsControllerIntegrationTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/library-events-producer/src/test/java/com/course/libraryeventsproducer/util/TestUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-events-producer/src/main/java/com/course/libraryeventsproducer/controller/LibraryEventsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/library-events-producer/src/main/java/com/course/libraryeventsproducer/controller/LibraryEventsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-events-producer/src/main/java/com/course/libraryeventsproducer/domain/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/library-events-producer/src/main/java/com/course/libraryeventsproducer/domain/Book.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-events-producer/src/main/java/com/course/libraryeventsproducer/domain/LibraryEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/library-events-producer/src/main/java/com/course/libraryeventsproducer/domain/LibraryEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-events-producer/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/library-events-producer/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +15,9 @@
   </component>
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+    <projectState path="$PROJECT_DIR$/library-events-consumer">
       <ProjectState />
     </projectState>
     <projectState path="$PROJECT_DIR$/library-events-producer">
