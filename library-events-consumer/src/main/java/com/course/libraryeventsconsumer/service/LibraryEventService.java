@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
+import org.springframework.dao.RecoverableDataAccessException;
 import org.springframework.stereotype.Service;
 
 import java.util.Objects;
@@ -25,6 +26,10 @@ public class LibraryEventService {
     public void processLibraryEvent(ConsumerRecord<Integer, String> consumerRecord) throws JsonProcessingException {
         LibraryEvent libraryEvent = objectMapper.readValue(consumerRecord.value(), LibraryEvent.class);
         log.info("Parsed LibraryEvent result :: {}", libraryEvent);
+
+        if (Integer.valueOf(0).equals(libraryEvent.libraryEventId())) {
+            throw new RecoverableDataAccessException("Exception to tests recovery strategies");
+        }
 
         switch (libraryEvent.libraryEventType()) {
             case NEW -> save(libraryEvent);
