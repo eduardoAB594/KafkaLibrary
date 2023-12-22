@@ -5,9 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="00d6238b-f67a-4193-97bd-56061c3d3aed" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/library-events-consumer/src/test/java/com/course/libraryeventsconsumer/consumer/LibraryEventsConsumerIntegrationTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-events-consumer/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/library-events-consumer/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library-events-consumer/src/main/java/com/course/libraryeventsconsumer/config/ConsumerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/library-events-consumer/src/main/java/com/course/libraryeventsconsumer/config/ConsumerConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library-events-consumer/src/test/java/com/course/libraryeventsconsumer/consumer/LibraryEventsConsumerIntegrationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/library-events-consumer/src/test/java/com/course/libraryeventsconsumer/consumer/LibraryEventsConsumerIntegrationTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
