@@ -5,8 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="00d6238b-f67a-4193-97bd-56061c3d3aed" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/library-events-consumer/src/main/java/com/course/libraryeventsconsumer/config/ConsumerConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/library-events-consumer/src/main/java/com/course/libraryeventsconsumer/consumer/LibraryEventsConsumer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/library-events-consumer/src/main/java/com/course/libraryeventsconsumer/consumer/LibraryEventsConsumerManualOffset.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/library-events-consumer/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library-events-consumer/src/main/resources/application.properties" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,8 +84,24 @@
     <key name="CreateTestDialog.RecentsKey">
       <recent name="com.course.libraryeventsproducer.controller" />
     </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.course.libraryeventsconsumer.consumer" />
+    </key>
   </component>
-  <component name="RunManager" selected="Application.LibraryEventsProducerApplication">
+  <component name="RunManager" selected="Application.LibraryEventsConsumerApplication">
+    <configuration name="LibraryEventsConsumerApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.course.libraryeventsconsumer.LibraryEventsConsumerApplication" />
+      <module name="library-events-consumer.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.course.libraryeventsconsumer.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="LibraryEventsProducerApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.course.libraryeventsproducer.LibraryEventsProducerApplication" />
       <module name="library-events-producer.main" />
@@ -94,30 +114,6 @@
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
-    </configuration>
-    <configuration name="LibraryEventsControllerIntegrationTest (3)" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/library-events-producer" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;libraryeventsproducer.integration.controller.LibraryEventsControllerIntegrationTest&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
-      <method v="2" />
     </configuration>
     <configuration name="LibraryEventsControllerIntegrationTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
@@ -193,11 +189,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.LibraryEventsConsumerApplication" />
         <item itemvalue="Application.LibraryEventsProducerApplication" />
         <item itemvalue="Gradle.LibraryEventsControllerTest.shouldFailWithInvalidValues" />
         <item itemvalue="Gradle.LibraryEventsControllerTest" />
         <item itemvalue="Gradle.LibraryEventsControllerIntegrationTest" />
-        <item itemvalue="Gradle.LibraryEventsControllerIntegrationTest (3)" />
       </list>
     </recent_temporary>
   </component>
